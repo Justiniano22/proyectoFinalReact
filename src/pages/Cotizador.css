@@ -1,0 +1,190 @@
+/* Contenedor principal para centrar la tarjeta */
+.cotizador-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box; 
+}
+
+/* La tarjeta blanca principal */
+.cotizador-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.02);
+  padding: 2.5rem; 
+  box-sizing: border-box;
+}
+
+/* Encabezado */
+.cotizador-header {
+  text-align: center;
+  margin-bottom: 2rem; 
+}
+.cotizador-header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+}
+.cotizador-header p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #5a6a85;
+}
+
+/* Formulario */
+.cotizador-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3c4858;
+}
+.loading-text {
+  font-size: 0.75rem;
+  color: #718096;
+  font-style: italic;
+}
+
+/* --- Estilos para los Componentes --- */
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem; 
+  font-size: 1rem;
+  border: 1px solid #d2d6dc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: black;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5rem;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #335eea;
+  box-shadow: 0 0 0 3px rgba(51, 94, 234, 0.1);
+}
+.form-group select:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+/* --- Fin Estilos de Componentes --- */
+
+
+/* Caja de Resultado */
+.resultado-box {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #f0f4ff;
+  border: 1px solid #cddcff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.resultado-box h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin: 0;
+}
+.precio-linea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #34495e;
+}
+.precio-linea span:last-child {
+  font-weight: 600;
+}
+.total-linea {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 1rem;
+  border-top: 1px solid #cddcff;
+}
+.total-label {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a202c;
+}
+.total-valor {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #335eea;
+}
+
+/* Botón de Guardar */
+.boton-guardar {
+  width: 100%;
+  background-color: #335eea;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+.boton-guardar:hover {
+  background-color: #2a4ecf;
+}
+.boton-guardar:active {
+  transform: scale(0.99);
+}
+.boton-guardar:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Link a Historial */
+.link-historial {
+  text-align: center;
+  margin-top: 1rem;
+}
+.link-historial a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #335eea;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.link-historial a:hover {
+  text-decoration: underline;
+  color: #2a4ecf;
+}
