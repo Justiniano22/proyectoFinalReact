@@ -9,10 +9,10 @@ interface PreciosPorTipo {
     "Barrio Privado"?: number;
 }
 
-// 2. Precio nacional por defecto (si no encontramos la provincia)
+//  Precio nacional por defecto (si no se encuntra la provincia)
 const DEFAULT_NATIONAL_PRICE = 2150;
 
-// 3. Definimos los precios (simulados) para CADA provincia
+// Precios (simulados) para CADA provincia
 const pricingData: Record<string, PreciosPorTipo> = {
     
     // --- Precios (Simulados) ---
@@ -259,28 +259,20 @@ const pricingData: Record<string, PreciosPorTipo> = {
     },
 };
 
-// 4. La función que usará nuestro componente
-//    (Esta lógica no cambia, funciona perfecto para el nuevo set de datos)
+
 export const getPrecioPorM2 = (provincia: string, tipoPropiedad: string): number => {
     
-    // 1. Buscamos la provincia en nuestros datos
-    //    (Usamos 'provincia' como clave, ej: "Buenos Aires")
     const provinciaData = pricingData[provincia];
 
-    // 2. Si la provincia no está en nuestra lista, usamos el default nacional
     if (!provinciaData) {
         return DEFAULT_NATIONAL_PRICE;
     }
 
-    // 3. Buscamos el precio para ese tipo de propiedad específico
-    //    (Usamos 'tipoPropiedad' como clave, ej: "Departamento")
     const precioEspecifico = (provinciaData as any)[tipoPropiedad];
 
-    // 4. Si existe un precio específico (ej: "Departamento"), lo devolvemos
     if (precioEspecifico) {
         return precioEspecifico;
     }
 
-    // 5. Si no hay precio (ej: "Oficina" en CABA), devolvemos el default de esa provincia
     return provinciaData["_default_price_"];
 };

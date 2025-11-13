@@ -12,6 +12,8 @@ type Opcion = {
     nombre: string;
 };
 
+const API_BASE_URL = "https://apis.datos.gob.ar/georef/api/v2.0";
+
 const opcionesTipoPropiedad = [
     { id: 1, nombre: "Casa" },
     { id: 2, nombre: "Departamento" },
@@ -39,7 +41,7 @@ function Cotizador() {
     useEffect(() => {
         const fetchProvincias = async () => {
             try {
-                const response = await fetch('/api/provincias');
+                const response = await fetch(`${API_BASE_URL}/provincias`);
                 const data = await response.json();
                 setProvincias(data.provincias);
             } catch (error) { console.error("Error al cargar las provincias:", error); } 
@@ -63,7 +65,7 @@ function Cotizador() {
                 dataKey = 'localidades';
             }
             try {
-                const url = `/api/${endpoint}?provincia=${encodeURI(provinciaSeleccionada)}&max=500`;
+                const url = `${API_BASE_URL}/${endpoint}?provincia=${encodeURI(provinciaSeleccionada)}&max=500`;
                 const response = await fetch(url);
                 const data = await response.json();
                 setCiudades(data[dataKey] || []); 

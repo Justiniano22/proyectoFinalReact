@@ -4,14 +4,14 @@ import './index.css'
 import App from './pages/Cotizador' // Esto está bien, 'App' es tu componente cotizador
 import Historial from './pages/Historial'
 
-
+// NO SE USA createBrowserRouter, PORQUE GIT HUB PAGES TIENE PROBLEMAS A LA HORA DE DEPLOYAR EL PROYECTO
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 
 // --- CORRECCIÓN DE RUTAS ---
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     // 1. La ruta raíz (la principal) debe ser "/"
     path: "/",
@@ -22,7 +22,11 @@ const router = createBrowserRouter([
     path: "/historial",
     element: <Historial />, // Muestra el historial
   },
-]);
+]); 
+
+// , {
+//   basename: "/proyectoFinalReact" 
+// }
 
 // 3. Usa el RouterProvider
 ReactDOM.createRoot(document.getElementById('root')!).render(
