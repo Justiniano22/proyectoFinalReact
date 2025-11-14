@@ -23,10 +23,10 @@ const SelectDinamico = ({
     }: SelectProps) => {
     return (
         <select 
-        id={id} // <-- Usamos la id aquí
+        id={id} // <-- Usamos la id 
         value={valorActual} 
         onChange={onChange}
-        disabled={disabled} // <-- Usamos disabled aquí
+        disabled={disabled} // <-- Usamos disabled 
         >
         <option value="">-- {placeholder} --</option>
         

@@ -27,7 +27,7 @@ const Historial: React.FC = () => {
     setHistorial([]);
   };
 
-  // --- NUEVA FUNCIÓN PARA ELIMINAR UN ITEM ---
+  // --- FUNCIÓN PARA ELIMINAR UN ITEM ---
   const eliminarCotizacion = (idParaEliminar: string) => {
     
     const nuevoHistorial = historial.filter((item) => item.id !== idParaEliminar);
